@@ -1,78 +1,259 @@
-# 🎓 Quizz AI - Nền tảng Tạo và Luyện Thi Trắc Nghiệm Thông Minh
+# 🎓 Quizz AI
 
-**Quizz AI** là một ứng dụng Web Fullstack hiện đại giúp người dùng dễ dàng tạo các bộ đề thi trắc nghiệm/tự luận, đồng thời luyện tập và kiểm tra kiến thức của mình. Điểm nhấn đặc biệt của hệ thống là tính năng **Tích hợp Trí Tuệ Nhân Tạo (AI)**, cho phép giáo viên hoặc học sinh tự động tạo ra hàng chục câu hỏi trắc nghiệm chất lượng cao chỉ từ một đoạn văn bản tài liệu duy nhất trong vài giây.
+<div align="center">
 
-🔗 **[Trải nghiệm bản Live Demo ngay tại đây!](https://quizz-mu-henna.vercel.app/)**
+### 🚀 Nền tảng tạo và luyện thi trắc nghiệm thông minh bằng Trí tuệ Nhân tạo
+
+<img src="https://img.shields.io/badge/Java_17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/AI-Llama_3.3_70B-purple?style=for-the-badge"/>
+
+<br><br>
+
+🌐 **Demo:** https://quizz-mu-henna.vercel.app/
+
+</div>
 
 ---
 
-## 🌟 Các tính năng nổi bật
-* **Quản lý chủ đề:** Tạo, sửa, xóa các chủ đề học tập (Topics) linh hoạt.
-* **Ngân hàng câu hỏi đa dạng:** Hỗ trợ câu hỏi Trắc nghiệm (nhiều đáp án) và Câu hỏi Tự luận.
-* **Bộ não AI siêu tốc (Groq - Llama 3.3 70B):** Tự động đọc hiểu tài liệu và sinh ra bộ câu hỏi trắc nghiệm kèm giải thích đáp án cực kỳ chi tiết chỉ với 1 cú click chuột.
-* **Luyện thi tương tác:** Giao diện làm bài thi trực quan, chấm điểm ngay lập tức và xem lại giải thích cho những câu sai.
-* **Thiết kế UI/UX hiện đại:** Sử dụng CSS thuần với các hiệu ứng Glassmorphism, Gradient và Micro-animations mang lại trải nghiệm người dùng cao cấp, mượt mà.
-* **Chuẩn DevOps & Cloud:** Sẵn sàng triển khai trên các nền tảng mây.
+# 📖 Giới thiệu
+
+**Quizz AI** là nền tảng học tập thông minh giúp người dùng:
+
+✅ Tạo bộ đề trắc nghiệm nhanh chóng
+
+✅ Quản lý ngân hàng câu hỏi
+
+✅ Luyện thi trực tuyến
+
+✅ Chấm điểm tức thời
+
+✅ Sinh câu hỏi tự động bằng AI
+
+Thay vì mất hàng giờ để biên soạn đề thi, người dùng chỉ cần nhập tài liệu học tập và hệ thống sẽ tự động tạo ra hàng loạt câu hỏi chất lượng cao trong vài giây.
 
 ---
 
-## 🛠 Công nghệ sử dụng
-Dự án được xây dựng dựa trên kiến trúc tiên tiến và tách biệt hoàn toàn giữa Frontend và Backend:
+# ✨ Tính năng nổi bật
 
-### Frontend
-* **Core:** React.js (khởi tạo bằng Vite cho tốc độ siêu nhanh)
-* **Styling:** Vanilla CSS (Tự thiết kế Design System riêng biệt, giao diện Dark/Light phong cách Glassmorphism)
-* **Routing:** React Router DOM
-* **API Client:** Axios
-* **Deploy:** Vercel
+## 🤖 AI Sinh Câu Hỏi Tự Động
+
+* Phân tích nội dung tài liệu
+* Trích xuất kiến thức quan trọng
+* Sinh câu hỏi trắc nghiệm
+* Tạo đáp án và lời giải
+* Hỗ trợ học tập hiệu quả
+
+---
+
+## 📚 Quản Lý Chủ Đề
+
+* ➕ Thêm chủ đề
+* ✏️ Chỉnh sửa chủ đề
+* 🗑️ Xóa chủ đề
+* 📂 Phân loại nội dung học tập
+
+---
+
+## 📝 Ngân Hàng Câu Hỏi
+
+### 🎯 Trắc nghiệm
+
+* Nhiều lựa chọn
+* Một đáp án đúng
+* Chấm điểm tự động
+
+### 📄 Tự luận
+
+* Nhập đáp án mở
+* Hỗ trợ ôn luyện chuyên sâu
+
+---
+
+## 🏆 Luyện Thi Trực Tuyến
+
+* Làm bài thi online
+* Xem điểm ngay lập tức
+* Theo dõi kết quả
+* Xem giải thích đáp án
+
+---
+
+## 🎨 Giao Diện Hiện Đại
+
+* 🌙 Dark Mode
+* ☀️ Light Mode
+* ✨ Glassmorphism
+* 🎭 Gradient Design
+* 📱 Responsive
+
+---
+
+# 🏗️ Kiến Trúc Hệ Thống
+
+```text
+┌───────────────┐
+│   React App   │
+└───────┬───────┘
+        │
+ REST API
+        │
+        ▼
+┌───────────────┐
+│ Spring Boot 3 │
+└───────┬───────┘
+        │
+ ┌──────┴──────┐
+ ▼             ▼
+
+MySQL      Groq AI
+(TiDB)    (Llama 3.3)
+```
+
+---
+
+# 🛠️ Công Nghệ Sử Dụng
+
+## 🎨 Frontend
+
+| Công nghệ       | Vai trò            |
+| --------------- | ------------------ |
+| ⚛️ ReactJS      | Xây dựng giao diện |
+| ⚡ Vite          | Build Tool         |
+| 🔄 Axios        | Gọi API            |
+| 🧭 React Router | Điều hướng         |
+| 🎨 CSS          | Thiết kế UI        |
+| ▲ Vercel        | Deploy             |
+
+---
+
+## ⚙️ Backend
+
+| Công nghệ           | Vai trò            |
+| ------------------- | ------------------ |
+| ☕ Java 17           | Ngôn ngữ lập trình |
+| 🍃 Spring Boot 3    | Backend Framework  |
+| 🗄️ Spring Data JPA | ORM                |
+| 🔄 Hibernate        | Mapping Database   |
+| 📦 Maven            | Quản lý thư viện   |
+| 🐳 Docker           | Containerization   |
+| 🚀 Render           | Deploy             |
+
+---
+
+## 🤖 AI Layer
+
+| Công nghệ             | Vai trò           |
+| --------------------- | ----------------- |
+| 🧠 Groq Cloud API     | AI Gateway        |
+| 🚀 Llama 3.3 70B      | Sinh câu hỏi      |
+| 📖 Prompt Engineering | Điều khiển đầu ra |
+
+---
+
+# 📸 Demo Hệ Thống
+
+## 🏠 Trang Chủ
+<img width="1918" height="872" alt="image" src="https://github.com/user-attachments/assets/31fbd10e-146c-4021-8e83-179404fbb02b" />
+
+
+---
+
+## 🤖 Tạo Câu Hỏi Bằng AI
+
+<img width="1918" height="878" alt="image" src="https://github.com/user-attachments/assets/e8af5b05-44bc-467b-80c0-7ab6a2a854da" />
+
+
+---
+
+## 📝 Làm Bài Thi
+<img width="1917" height="877" alt="image" src="https://github.com/user-attachments/assets/667689cf-b743-440c-a415-5eda67568de1" />
+
+
+---
+
+## 📊 Kết Quả
+
+<img width="1916" height="886" alt="image" src="https://github.com/user-attachments/assets/d661439c-eee9-4100-bf99-42adbc6c0358" />
+
+
+---
+
+# 🚀 Khởi Chạy Dự Án
+
+## 1️⃣ Clone Source
+
+```bash
+git clone https://github.com/your-username/quizz-ai.git
+```
+
+## 2️⃣ Chạy Backend
+
+```bash
+./mvnw spring-boot:run
+```
+
+## 3️⃣ Chạy Frontend
+
+```bash
+npm install
+
+npm run dev
+```
+
+---
+
+# 📈 Hướng Phát Triển
+
+* 🔐 JWT Authentication
+* 👨‍🏫 Phân quyền Giáo viên / Học sinh
+* 📊 Dashboard thống kê
+* 🏅 Leaderboard
+* 🤖 AI chấm điểm tự luận
+* 📄 Import PDF
+* 🌍 Đa ngôn ngữ
+
+---
+
+# 💡 Điểm Nổi Bật Kỹ Thuật
 
 ### Backend
-* **Core:** Java 17 + Spring Boot 3
-* **Database:** MySQL (Triển khai trên đám mây TiDB Serverless)
-* **ORM:** Spring Data JPA / Hibernate
-* **AI Integration:** RESTful API giao tiếp với **Groq Cloud API** (Model `llama-3.3-70b-versatile`)
-* **Build tool:** Maven
-* **Deploy:** Docker Container chạy trên Render
+
+* RESTful API Design
+* Spring Boot 3
+* JPA/Hibernate
+* Exception Handling
+* Validation
+* AI Integration
+
+### Frontend
+
+* Component-based Architecture
+* Reusable UI
+* Responsive Design
+* API Integration
+
+### Cloud & DevOps
+
+* Docker
+* Render
+* Vercel
+* TiDB Serverless
 
 ---
 
-## 🚀 Hướng dẫn cài đặt và chạy trên máy tính cá nhân (Local)
+# 👨‍💻 Tác Giả
 
-### Yêu cầu hệ thống
-* Node.js (phiên bản 16+)
-* Java JDK 17
-* Maven
+**Bùi Tiến Đạt**
 
-### Bước 1: Thiết lập cơ sở dữ liệu và AI
-Bạn cần chuẩn bị sẵn một Database MySQL (ví dụ dùng XAMPP, MySQL Workbench hoặc TiDB) và lấy 1 API Key miễn phí từ [Groq Console](https://console.groq.com/keys).
+Java Backend Developer
 
-### Bước 2: Chạy Backend (Spring Boot)
-1. Mở terminal, di chuyển vào thư mục `backend`.
-2. Tạo file `application.properties` (nếu chưa có) trong `src/main/resources/` và thiết lập biến môi trường, hoặc truyền thẳng biến vào máy tính:
-   * `DB_URL`: Link JDBC kết nối tới MySQL
-   * `DB_USERNAME`: Tên đăng nhập DB
-   * `DB_PASSWORD`: Mật khẩu DB
-   * `GROQ_API_KEY`: API Key lấy từ Groq
-3. Chạy lệnh để khởi động:
-   ```bash
-   ./mvnw spring-boot:run
-   ```
-   Backend sẽ chạy tại cổng `http://localhost:8080`.
-
-### Bước 3: Chạy Frontend (React)
-1. Mở một terminal mới, di chuyển vào thư mục `frontend`.
-2. Chạy lệnh cài đặt các gói thư viện:
-   ```bash
-   npm install
-   ```
-3. Khởi động giao diện người dùng:
-   ```bash
-   npm run dev
-   ```
-4. Truy cập vào `http://localhost:5173` trên trình duyệt và bắt đầu trải nghiệm!
-
----
-
-## 👨‍💻 Tác giả
-Phát triển bởi **Bùi Tiến Đạt** (@BuiTienDat29).
-Được thiết kế từ con số 0 với niềm đam mê mang lại trải nghiệm học tập đỉnh cao. Mọi ý kiến đóng góp xin vui lòng gửi Pull Request hoặc mở Issue trên kho lưu trữ này!
+⭐ Nếu thấy dự án hữu ích hãy để lại một Star để ủng hộ nhé!
