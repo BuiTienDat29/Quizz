@@ -1,7 +1,7 @@
 package com.studyapp.controller;
 
 import com.studyapp.dto.AiGenerateRequestDTO;
-import com.studyapp.service.OllamaService;
+import com.studyapp.service.AiGenerationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*")
 public class AiController {
 
-    private final OllamaService ollamaService;
+    private final AiGenerationService aiService;
 
-    public AiController(OllamaService ollamaService) {
-        this.ollamaService = ollamaService;
+    public AiController(AiGenerationService aiService) {
+        this.aiService = aiService;
     }
 
     @PostMapping("/generate")
     public ResponseEntity<?> generateQuestions(@RequestBody AiGenerateRequestDTO request) {
         try {
-            ollamaService.generateQuestions(request);
+            aiService.generateQuestions(request);
             return ResponseEntity.ok().body("{\"message\": \"Generated successfully\"}");
         } catch (Exception e) {
             e.printStackTrace();

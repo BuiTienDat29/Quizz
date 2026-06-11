@@ -10,6 +10,7 @@ import com.studyapp.entity.Topic;
 import com.studyapp.repository.AnswerRepository;
 import com.studyapp.repository.QuestionRepository;
 import com.studyapp.repository.TopicRepository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -21,11 +22,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @Service
-public class OllamaService {
+public class AiGenerationService {
 
     private final RestTemplate restTemplate = new RestTemplate();
     private final ObjectMapper objectMapper = new ObjectMapper();
@@ -33,7 +32,10 @@ public class OllamaService {
     private final QuestionRepository questionRepository;
     private final AnswerRepository answerRepository;
 
-    public OllamaService(TopicRepository topicRepository, QuestionRepository questionRepository, AnswerRepository answerRepository) {
+    @Value("${groq.api.key}")
+    private String groqApiKey;
+
+    public AiGenerationService(TopicRepository topicRepository, QuestionRepository questionRepository, AnswerRepository answerRepository) {
         this.topicRepository = topicRepository;
         this.questionRepository = questionRepository;
         this.answerRepository = answerRepository;
@@ -54,12 +56,13 @@ public class OllamaService {
             + "Cấu trúc JSON yêu cầu:\n"
             + "[\n  {\n    \"content\": \"Nội dung câu hỏi\",\n    \"type\": \"" + request.getQuestionType() + "\",\n    \"explanation\": \"Giải thích chi tiết tại sao lại chọn đáp án đó\",\n    \"answers\": [\n      {\"content\": \"Đáp án A\", \"isCorrect\": true},\n      {\"content\": \"Đáp án B\", \"isCorrect\": false}\n    ]\n  }\n]";
 
-        String url = "http://localhost:11434/api/chat";
+        String url = "https://api.groq.com/openai/v1/chat/completions";
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.setBearerAuth(groqApiKey);
 
         Map<String, Object> requestMap = new HashMap<>();
-        requestMap.put("model", "minimax-m2.5:cloud");
+        requestMap.put("model", "llama-3.3-70b-versatile");
         requestMap.put("stream", false);
         
         List<Map<String, String>> messages = new ArrayList<>();
@@ -75,10 +78,10 @@ public class OllamaService {
 
         ResponseEntity<Map> response = restTemplate.postForEntity(url, entity, Map.class);
         Map<String, Object> body = response.getBody();
-        Map<String, Object> message = (Map<String, Object>) body.get("message");
+        List<Map<String, Object>> choices = (List<Map<String, Object>>) body.get("choices");
+        Map<String, Object> message = (Map<String, Object>) choices.get(0).get("message");
         String content = (String) message.get("content");
 
-        // Parse JSON (bỏ qua thẻ <think> của deepseek-r1)
         String jsonStr = extractJsonArray(content);
         if (jsonStr == null) {
             throw new RuntimeException("Could not extract JSON from AI response: " + content);
