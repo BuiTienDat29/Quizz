@@ -108,10 +108,10 @@ public class OllamaService {
     }
 
     private String extractJsonArray(String text) {
-        Pattern pattern = Pattern.compile("\\[.*?\\]", Pattern.DOTALL);
-        Matcher matcher = pattern.matcher(text);
-        if (matcher.find()) {
-            return matcher.group(0);
+        int start = text.indexOf('[');
+        int end = text.lastIndexOf(']');
+        if (start != -1 && end != -1 && start < end) {
+            return text.substring(start, end + 1);
         }
         return null;
     }
