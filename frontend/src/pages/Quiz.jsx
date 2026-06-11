@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-
-const axiosClient = axios.create({
-    baseURL: 'http://localhost:8080/api'
-});
+import axiosClient from '../api/axiosClient';
 
 function Quiz() {
     const { id } = useParams(); // topicId
